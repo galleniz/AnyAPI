@@ -1,5 +1,5 @@
 {
-  "name": "anyapi",
+  "name": "anybotapi",
   "version": "1.0.0",
   "description": "An interactor for AnyBot-API",
   "main": "index.js",

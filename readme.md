@@ -7,7 +7,7 @@ AnyAPI is an API interactor of [MDCYT/Any-API](https://github.com/MDCYT/Any-API/
 
 > Basic constructor & login
 ```javascript
-const { Client } = require("anyapi")
+const { Client } = require("anybotapi")
 
 const myAnyAPIClient = new Client({api_key: process.env.API_KEY || undefined});
 global.myAnyAPIClient = myAnyAPIClient;
