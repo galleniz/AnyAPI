@@ -1,6 +1,7 @@
-
-module.exports.A = ()=> {console.log("a")}
-module.exports.Client = require("./src/Client")
-module.exports.Routes = require("./src/routes/Routes")
-module.exports.Auth = require("./src/Auth")
-module.exports.route = require("./src/route")
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Client = exports.A = void 0;
+var A = function () { console.log("a"); };
+exports.A = A;
+var Client_1 = require("./src/Client");
+Object.defineProperty(exports, "Client", { enumerable: true, get: function () { return Client_1.default; } });

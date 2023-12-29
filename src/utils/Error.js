@@ -1,9 +1,10 @@
-const axios = require("axios")
-
-class Error {
-    constructor(message, code)
-    {
-        throw {message,code}
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var Error = /** @class */ (function () {
+    function Error(message, code) {
+        throw { message: message, code: code };
     }
-}
-module.exports = Error
+    return Error;
+}());
+exports.default = Error;
+module.exports = Error;

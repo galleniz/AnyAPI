@@ -1,47 +1,22 @@
-const error = require("../utils/Error")
-const Authenticator = require("../Auth")
-const axios = require("axios")
-
-
-
-const Anime = require("./definers/Anime")
-const Animals = require("./definers/Animals")
-const Utils = require("./definers/Utils")
-
-
-class Routes {
-   /**
-     * Constructor
-     * 
-     * @param {Authenticator} authenticator 
-     */
-   constructor(authenticator,utils)
-   {
-       if (!authenticator)
-           throw new error("Not have an Authenticator in the client", "CHNA");
-        /** 
-        * @type {Authenticator} 
-        **/
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var Error_1 = require("../utils/Error");
+var Animals_1 = require("./sections/Animals");
+var Anime_1 = require("./sections/Anime");
+var Utils_1 = require("./sections/Utils");
+var Routes = /** @class */ (function () {
+    /**
+      * Constructor of routes
+      */
+    function Routes(authenticator) {
+        if (!authenticator)
+            throw new Error_1.default("Not have an Authenticator in the client", "CHNA");
         this.authenticator = authenticator;
-
-        /**
-         * Anime class, with the routes.
-         * @type {Anime}
-         */
-        this.anime = new Anime(authenticator);
-        /**
-         * Utils class, with the routes.
-         * @type {Utils}
-         */
-        this.utils = new Utils(authenticator);
-        /**
-         * Utils class, with the routes.
-         * @type {Animals}
-         */
-        this.animals = new Animals(authenticator);
-   
-   }
-   
-}
-
-module.exports = Routes
+        this.anime = new Anime_1.default(authenticator);
+        this.utils = new Utils_1.default(authenticator);
+        this.animals = new Animals_1.default(authenticator);
+    }
+    return Routes;
+}());
+exports.default = Routes;
+module.exports = Routes;
