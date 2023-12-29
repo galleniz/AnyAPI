@@ -1,6 +1,6 @@
 import Auth from "../../iteractors/Auth";
 import Error from "../../utils/Error";
-import { BadRequest, BinaryResult, CoinflipResult, EncodeResult, FlipTextResult, PasswordResult } from "../../utils/Interfaces";
+import { BadRequest, BinaryResult, CoinflipResult, EncodeResult, FlipTextResult, PasswordResult, UploadError, UploadResult, UploadResultBadRequest } from "../../utils/Interfaces";
 
 import BinRoute from "../utils/Binary";
 import CoinFlipRoute from "../utils/CoinFlip";
@@ -13,17 +13,15 @@ import UploadRoute from "../utils/Upload";
 export default class Utils {
     readonly authenticator: Auth;
    /**
-     * Constructor of utils
+     * Constructor of utils, yeah, im not very creative for the names
      * 
      */
    constructor(authenticator:Auth)
    {
        if (!authenticator)
            throw new Error("Not have an Authenticator in the client", "CHNA");
-      
+    
         this.authenticator = authenticator;
-     
- 
    }
     /**
      * Flip the text
@@ -75,7 +73,7 @@ export default class Utils {
     /**
      * Uploads an File into API
      */
-    async upload(url:string,name:string,id:string)
+    async upload(url:string,name:string,id:string):Promise<UploadResult | UploadError | UploadResultBadRequest>
     {
         const up = new UploadRoute(this.authenticator)
 

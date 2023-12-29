@@ -6,8 +6,14 @@ import WinkRoute from "../anime/Wink";
 
 
 export default class Anime {
+    /**
+     * authenticator swag class
+     */
     authenticator: Auth;
-
+    /**
+     * creates a new anime class
+     * @param authenticator 
+     */
     constructor(authenticator: Auth)
     {
         this.authenticator = authenticator;

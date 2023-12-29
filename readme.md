@@ -1,4 +1,3 @@
-# Any API 
 > based on [MDCYT/Any-Bot](https://github.com/MDCYT/Any-Bot/)
 
 AnyAPI is an API interactor of [MDCYT/Any-API](https://github.com/MDCYT/Any-API/) by [MDC](https://github.com/MDCYT)
@@ -6,20 +5,15 @@ AnyAPI is an API interactor of [MDCYT/Any-API](https://github.com/MDCYT/Any-API/
 ## Usage
 
 > Basic constructor & login
-```javascript
-const { Client } = require("anybotapi")
+```typescript
+import { Client } from "anybotapi";
 
-const myAnyAPIClient = new Client({api_key: process.env.API_KEY || undefined});
-global.myAnyAPIClient = myAnyAPIClient;
-
-myAnyAPIClient.animals.dog().then(data=>{
-    console.log(data); 
-});
+const myAnyAPIClient = new Client({api_key: process.env.API_KEY});
 ```
 
 > With out api key login 
 ```javascript
-const myAnyAPIClient = new Client();
+const myAnyAPIClient = new Client({api_key: undefined});
 ```
 
 > With API key
@@ -27,4 +21,16 @@ const myAnyAPIClient = new Client();
 // use an valid API key, this isnt valid xdd
 const api_key = "API_KEY";
 const myAnyAPIClient = new Client({api_key})
+```
+
+### Using routes
+> Example:
+```typescript
+    const data = await client.routes.anime.hug();
+    console.log(data.image);
+```
+> Using animals fun facts
+```typescript
+    const data = await client.routes.animals.dog();
+    console.log(data.fact);
 ```

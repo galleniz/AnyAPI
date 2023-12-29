@@ -2,6 +2,9 @@
 import {ApiAuth} from "../utils/Interfaces";
 export default class Auth 
 {
+    /**
+     * Api key for the client, used on upload routes and similars
+     */
     readonly api_key: string | undefined;
 
     constructor(settings: ApiAuth )

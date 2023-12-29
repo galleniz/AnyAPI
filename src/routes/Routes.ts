@@ -6,6 +6,9 @@ import Utils from "./sections/Utils"
 
 
 export default class Routes {
+  /**
+   * Authenticator class manager
+   */
    readonly authenticator: Auth;
     /**
      * Anime class, with the routes.
@@ -20,7 +23,8 @@ export default class Routes {
     */
    readonly utils: Utils
    /**
-     * Constructor of routes
+     * Constructor of routes, it makes a new class of Routes, and
+     * creates the manager
      */
    constructor(authenticator: Auth)
    {

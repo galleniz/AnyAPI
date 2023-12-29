@@ -1,5 +1,5 @@
 
-import {Client, A} from "./index";
+import {Client} from "./index";
 
 const client = new Client({
     api_key: ""
@@ -28,4 +28,3 @@ console.log(await client.utils.flipACoin())
 console.log("Programa finalizado.")
 }
 
-A();

@@ -9,7 +9,14 @@ import KoalaRoute from "../animals/Koala";
 import {AnimalsResult} from "../../utils/Interfaces"
 
 export default class Animals {
+  /**
+   * Cool swag authenticator
+   */
   authenticator: Auth;
+  /**
+   * creates a new animals interactor section
+   * @param authenticator Cool swag auth
+   */
   constructor(authenticator:Auth) {
     this.authenticator = authenticator;
   }
